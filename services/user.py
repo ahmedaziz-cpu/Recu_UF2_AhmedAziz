@@ -23,7 +23,7 @@ def create_user(nom: str, email: str, cognom: str, descripcio: str, curs: str, a
     conn = connection_db()
     cursor = conn.cursor()
     try:
-        sql = "INSERT INTO users (nom, cognom, email, descripcio, curs, ano, calle, cp, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id, nom, cognom, email"
+        sql = "INSERT INTO users (nom, cognom, email, descripcio, curs, ano, calle, cp, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id, nom, email"
         cursor.execute(sql, (nom, cognom, email, descripcio, curs, ano, calle, cp, password))
         new_row = cursor.fetchone()
         conn.commit()
