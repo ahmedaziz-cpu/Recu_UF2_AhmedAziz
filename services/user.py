@@ -32,3 +32,26 @@ def create_user(nom: str, email: str, cognom: str, descripcio: str, curs: str, a
         cursor.close()
         conn.close()
 
+
+def update_user(user_id: int, cognom: str, calle: str) -> dict | None:
+    conn = connexion.db.connection_db()
+    cursor = conn.cursor()
+    try:
+        sql = """
+            UPDATE users
+            SET nom = %s, email = %s
+            WHERE id = %s
+            RETURNING id, nom, email
+        """
+
+        cursor.execute(sql, (cognom, calle, user_id))
+        updated_row = cursor.fetchone()
+        if updated_row:
+            conn.commit()
+            return user_schema(updated_row)
+
+        else:
+            return None
+    finally:
+        cursor.close()
+        conn.close()
