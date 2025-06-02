@@ -10,6 +10,7 @@ def connection_db():
         port="3456"
     )
     print("Connexió establerta correctament")
+
     return conn
 
 
