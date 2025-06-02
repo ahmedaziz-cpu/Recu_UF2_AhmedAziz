@@ -3,7 +3,7 @@ import psycopg2
 
 def connection_db():
     conn = psycopg2.connect(
-        database="practica",
+        database="fastapiexamen",
         user="user",
         password="pass",
         host="localhost",
