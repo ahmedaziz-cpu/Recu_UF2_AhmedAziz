@@ -15,6 +15,10 @@ def get_user_by_id(user_id: int) -> dict | None:
         cursor.close()
         conn.close()
 
+from connexion.db import connection_db
+from schemas.user_sch import user_schema
+
+
 def create_user(nom: str, email: str, cognom: str, descripcio: str, curs: str, ano: int, calle: str, cp: int, password: str) -> dict:
     conn = connection_db()
     cursor = conn.cursor()
@@ -27,3 +31,4 @@ def create_user(nom: str, email: str, cognom: str, descripcio: str, curs: str, a
     finally:
         cursor.close()
         conn.close()
+
