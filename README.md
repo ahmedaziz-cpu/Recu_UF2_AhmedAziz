@@ -1,1 +1,3 @@
 # Recu_UF2_AhmedAziz
+
+##  Hi han carpetes que com al fer el merge hi havien conflictes ,doncs si yo per exemple nomes pujaba dos fitxers , al fer el merge i arreglar els conflictes em posaba tot a la branca per exemple ,si jo feia commit del arxius a la branca 6 nomes pujant els que havia modificat ,al fer merge i fer la resolucio de conflictes em fusionava tot llavors em pujaba tot a la branca 6, per exemple ,no hi ha cap problema tot esta on toca nomes et volia dir aixo perque hi han carpetes que tenen 6 fitxers pero realment hi ha modificats 2 fitxers,per exemple als ultims 2 nomes he modificat el serveis y el main,al 4 el schemas ,al 1 la connexio.
