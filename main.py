@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from services.user import (create_user)
+from services.user import create_user
 
 app = FastAPI()
 
