@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from services.user import (
     create_user,
     get_user_by_id
+    update_user
 )
 
 
@@ -20,5 +21,11 @@ async def create_user_endpoint(
 ):
     new_user = create_user(nom, email, cognom, descripcio, curs, ano, calle, cp, password)
     return new_user
+
+@app.put("/users/{user_id}", response_model=dict)
+async def update_user_endpoint(user_id: int, name: str, email: str):
+
+    updated = update_user(user_id, name, email)
+    return updated
 
 
